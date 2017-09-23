@@ -14,8 +14,6 @@ function spacer() {
   let output = dealWithSpaces(loadedTextArray);
 
   showFormattedResult(output);
-
-  document.getElementById('nobreakspaced').value = output;
 }
 
 function dealWithSpaces(textInArray) {
