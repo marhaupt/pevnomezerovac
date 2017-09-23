@@ -6,6 +6,13 @@
 // TODO: jednotky
 // do schránky (clipboard.js)s
 // TODO: do schránky automaticky?
+<<<<<<< HEAD
+=======
+
+(function(){
+  new Clipboard('#copier');
+})()
+>>>>>>> origin/master
 
 (function(){
   new Clipboard('#copier');
