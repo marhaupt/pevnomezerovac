@@ -1,37 +1,50 @@
+// Github Pages
+// velká písmena
+// mezera na konci
+// formátovaný výstup (zvlášť funkce)
+// TODO: tituly
+// TODO: jednotky
+// TODO: automaticky do schránky (clipboard.js)
+
 function spacer() {
-  const wrongSpaced = document.getElementById('wrongspaced').value;
-  let betterSpaced = [];
+  const loadedText = document.getElementById('wrongspaced').value;
 
+  let loadedTextArray = loadedText.split(' ');
+
+  let output = dealWithSpaces(loadedTextArray);
+
+  showFormattedResult(output);
+
+  document.getElementById('nobreakspaced').value = output;
+}
+
+function dealWithSpaces(textInArray) {
   const dangerous = ['a', 'i', 'o', 'u', 'k', 's', 'v', 'z'];
+  let betterSpacedArray = [];
 
-  let splitText = wrongSpaced.split(" ");
+  console.log(textInArray);
 
-  console.log(splitText);
-
-  splitText.map((word) => {
-    if(dangerous.includes(word)) {
-      word +='&nbsp;';
+  textInArray.map(word => {
+    if (dangerous.includes(word.toLowerCase())) {
+      word += '&nbsp;';
     } else {
-      word +=' ';
+      word += ' ';
     }
 
-    betterSpaced.push(word);
+    betterSpacedArray.push(word);
   });
 
-  console.log(betterSpaced);
+  console.log(betterSpacedArray);
 
-  let output = betterSpaced.join('');
+  let correctedText = betterSpacedArray.join('').slice(0, -1);
 
-  console.log(output);
+  return correctedText;
+}
 
-  document.getElementById("nobreakspaced").value = output;
+function showFormattedResult(text) {
+  let unformatted = text.split('&nbsp;');
 
-  // TODO: mezera na konci
-  // TODO: jednotky
-  // TODO: tituly
-  // TODO: formátovaný výstup (zvlášť funkce)
-  // TODO: automaticky do schránky (clipboard.js)
-  // TODO: GitHub pages
+  document.getElementById('formatted-output').innerHTML = unformatted.join('<em>&amp;nbsp;</em>');
 }
 
 document.getElementById('clicker').addEventListener('click', spacer, false);

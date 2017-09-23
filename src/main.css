@@ -4,3 +4,8 @@ body {
   background-color: #fafafa;
   color: #111;
 }
+
+em {
+  color: red;
+  font-style: normal;
+}
