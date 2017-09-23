@@ -4,7 +4,12 @@
 // formátovaný výstup (zvlášť funkce)
 // TODO: tituly
 // TODO: jednotky
-// TODO: automaticky do schránky (clipboard.js)
+// do schránky (clipboard.js)s
+// TODO: do schránky automaticky?
+
+(function(){
+  new Clipboard('#copier');
+})()
 
 (function(){
   new Clipboard('#copier');
