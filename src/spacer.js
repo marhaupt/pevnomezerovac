@@ -6,6 +6,10 @@
 // TODO: jednotky
 // TODO: automaticky do schránky (clipboard.js)
 
+(function(){
+  new Clipboard('#copier');
+})()
+
 function spacer() {
   const loadedText = document.getElementById('wrongspaced').value;
 
@@ -14,13 +18,17 @@ function spacer() {
   let output = dealWithSpaces(loadedTextArray);
 
   showFormattedResult(output);
+
+  document.getElementById('wrongspaced').value = output;
+
+  document.getElementById('copier').classList.remove('hidden');
 }
 
 function dealWithSpaces(textInArray) {
   const dangerous = ['a', 'i', 'o', 'u', 'k', 's', 'v', 'z'];
   let betterSpacedArray = [];
 
-  console.log(textInArray);
+  // console.log(textInArray);
 
   textInArray.map(word => {
     if (dangerous.includes(word.toLowerCase())) {
@@ -32,7 +40,7 @@ function dealWithSpaces(textInArray) {
     betterSpacedArray.push(word);
   });
 
-  console.log(betterSpacedArray);
+  // console.log(betterSpacedArray);
 
   let correctedText = betterSpacedArray.join('').slice(0, -1);
 

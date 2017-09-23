@@ -25,6 +25,7 @@ button {
   padding: 0.3em 0.5em;
   box-shadow: 2px 2px 5px rgba(70,70,70,.4);
   transition: all 250ms ease-in-out;
+  margin-right: 0.5em;
 }
 
 button:focus {
@@ -32,15 +33,25 @@ button:focus {
   box-shadow: 2px 2px 10px rgba(70,70,70,.85);
 }
 
+.hidden {
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+}
+
 textarea {
   display: block;
-  box-shadow: 0 0 0 rgba(70,70,70,.7);
+  box-shadow: 0 0 0 rgba(70,70,70,.1);
   transition: all 250ms ease-in-out;
 }
 
 textarea:focus {
   outline:none;
-  box-shadow: 2px 2px 10px rgba(70,70,70,.85);
+  box-shadow: 1px 1px 5px rgba(70,70,70,.3);
+}
+
+textarea::selection {
+  background-color: rgba(129,112,109,.15);
 }
 
 header {
