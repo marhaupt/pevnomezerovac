@@ -1,0 +1,11 @@
+{
+  "name": "pevnomezerovac",
+  "version": "1.0.0",
+  "description": "Puts no-break space where it should be in Czech language",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Martin Haupt",
+  "license": "ISC"
+}
