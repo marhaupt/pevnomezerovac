@@ -54,4 +54,9 @@ function showFormattedResult(text) {
   document.getElementById('formatted-output').innerHTML = unformatted.join('<em>&amp;nbsp;</em>');
 }
 
+function eraseText() {
+  document.getElementById('wrongspaced').value = '';
+}
+
 document.getElementById('clicker').addEventListener('click', spacer, false);
+document.getElementById('eraser').addEventListener('click', eraseText, false);
